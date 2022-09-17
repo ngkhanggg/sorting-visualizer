@@ -34,6 +34,10 @@ public class Visualizer extends JPanel {
         }
     }
 
+    public int getNumBars() {
+        return NUM_BARS;
+    }
+
     public void generateArr(int size) {
         Random rd = new Random();
 

@@ -71,7 +71,8 @@ public class Window extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         Object a = e.getSource();
         if (a == shuffleButton) {
-            System.out.println("Shuffled");
+            visualizer.generateArr(visualizer.getNumBars());
+            visualizer.repaint();
         }
 
         if (a == exitButton) {
