@@ -59,10 +59,12 @@ public class Window extends JFrame implements ActionListener {
         exitButton.setFocusable(false);
         exitButton.addActionListener((e) -> System.exit(0));
 
+        // add exit button and shuffle button to button panel
         buttonsPanel.add(shuffleButton);
         buttonsPanel.add(Box.createHorizontalStrut(3));
         buttonsPanel.add(exitButton);
         
+        // frame
         this.setTitle("Sorting Visualizer");
         this.setSize(WIDTH, HEIGHT);
         this.setResizable(false);
