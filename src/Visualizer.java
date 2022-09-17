@@ -46,5 +46,7 @@ public class Visualizer extends JPanel {
         for (int i = 0; i < size; i++) {
             this.arr[i] = rd.nextInt(50 - 1) + 1;
         }
+
+        this.repaint();
     }
 }
