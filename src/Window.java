@@ -40,7 +40,7 @@ public class Window extends JFrame implements ActionListener {
         // shuffle button
         shuffleButton = new JButton();
         shuffleButton.setFont(new Font("Cambria", Font.PLAIN, 20));
-        shuffleButton.setText("SHUFFLE");
+        shuffleButton.setText("Shuffle");
         shuffleButton.setForeground(Color.WHITE);
         shuffleButton.setBackground(Color.BLACK);
         shuffleButton.setFocusable(false);
@@ -49,7 +49,7 @@ public class Window extends JFrame implements ActionListener {
         // exit button
         exitButton = new JButton();
         exitButton.setFont(new Font("Cambria", Font.PLAIN, 20));
-        exitButton.setText("EXIT");
+        exitButton.setText("Exit");
         exitButton.setForeground(Color.WHITE);
         exitButton.setBackground(Color.BLACK);
         exitButton.setFocusable(false);
