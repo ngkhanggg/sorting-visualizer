@@ -12,7 +12,7 @@ public class Visualizer extends JPanel {
     private final int NUM_BARS = WIDTH / BAR_WIDTH;
 
     public Visualizer() {
-        this.setSize(new Dimension(WIDTH, HEIGHT));
+        this.setPreferredSize(new Dimension(WIDTH, HEIGHT));
         this.setBackground(Color.BLACK);
 
         generateArr(NUM_BARS);
