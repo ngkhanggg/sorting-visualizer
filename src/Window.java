@@ -4,7 +4,7 @@ import javax.swing.*;
 
 public class Window extends JFrame implements ActionListener {
     // components
-    private JButton shuffleButton, exitButton, sortButton[];
+    private JButton shuffle, exit, sortButtons[];
     private JPanel buttonsPanel;
 
     // visualizer panel
@@ -23,42 +23,41 @@ public class Window extends JFrame implements ActionListener {
         buttonsPanel.setBackground(Color.BLACK);
 
         // buttons for chosing between sorting algorithms
-        sortButton = new JButton[5];
-        for (int i = 0; i < sortButton.length; i++) {
-            sortButton[i] = new JButton();
-            sortButton[i].setForeground(Color.WHITE);
-            sortButton[i].setFont(new Font("Cambria", Font.PLAIN, 20));
-            sortButton[i].setText(sortersName[i]);
-            sortButton[i].setFocusable(false);
-            sortButton[i].setBackground(Color.BLACK);
-            sortButton[i].setForeground(Color.WHITE);
-            sortButton[i].addActionListener(this);
-            buttonsPanel.add(sortButton[i]);
+        sortButtons = new JButton[5];
+        for (int i = 0; i < sortButtons.length; i++) {
+            sortButtons[i] = new JButton();
+            sortButtons[i].setFont(new Font("Cambria", Font.PLAIN, 20));
+            sortButtons[i].setText(sortersName[i]);
+            sortButtons[i].setFocusable(false);
+            sortButtons[i].setBackground(Color.BLACK);
+            sortButtons[i].setForeground(Color.WHITE);
+            sortButtons[i].addActionListener(this);
+            buttonsPanel.add(sortButtons[i]);
             buttonsPanel.add(Box.createHorizontalStrut(3));
         }
 
         // shuffle button
-        shuffleButton = new JButton();
-        shuffleButton.setFont(new Font("Cambria", Font.PLAIN, 20));
-        shuffleButton.setText("Shuffle");
-        shuffleButton.setForeground(Color.WHITE);
-        shuffleButton.setBackground(Color.BLACK);
-        shuffleButton.setFocusable(false);
-        shuffleButton.addActionListener((e) -> visualizer.generateArr());
+        shuffle = new JButton();
+        shuffle.setFont(new Font("Cambria", Font.PLAIN, 20));
+        shuffle.setText("Shuffle");
+        shuffle.setForeground(Color.WHITE);
+        shuffle.setBackground(Color.BLACK);
+        shuffle.setFocusable(false);
+        shuffle.addActionListener((e) -> visualizer.generateArr());
 
         // exit button
-        exitButton = new JButton();
-        exitButton.setFont(new Font("Cambria", Font.PLAIN, 20));
-        exitButton.setText("Exit");
-        exitButton.setForeground(Color.WHITE);
-        exitButton.setBackground(Color.BLACK);
-        exitButton.setFocusable(false);
-        exitButton.addActionListener((e) -> System.exit(0));
+        exit = new JButton();
+        exit.setFont(new Font("Cambria", Font.PLAIN, 20));
+        exit.setText("Exit");
+        exit.setForeground(Color.WHITE);
+        exit.setBackground(Color.BLACK);
+        exit.setFocusable(false);
+        exit.addActionListener((e) -> System.exit(0));
 
         // add exit button and shuffle button to button panel
-        buttonsPanel.add(shuffleButton);
+        buttonsPanel.add(shuffle);
         buttonsPanel.add(Box.createHorizontalStrut(3));
-        buttonsPanel.add(exitButton);
+        buttonsPanel.add(exit);
         
         // frame
         this.setTitle("Sorting Visualizer");
@@ -76,9 +75,9 @@ public class Window extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         Object a = e.getSource();
 
-        for (int i = 0; i < sortButton.length; i++) {
-            if (a == sortButton[i]) {
-                System.out.println(sortButton[i].getText());
+        for (int i = 0; i < sortButtons.length; i++) {
+            if (a == sortButtons[i]) {
+                System.out.println(sortButtons[i].getText());
             }
         }
     }
