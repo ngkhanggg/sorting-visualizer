@@ -5,8 +5,8 @@ import javax.swing.*;
 public class Visualizer extends JPanel {
     private int[] arr;
 
-    private final int WIDTH = 1280;
-    private final int HEIGHT = 640;
+    private final int WIDTH = 1100;
+    private final int HEIGHT = 600;
 
     private final int BAR_WIDTH = 4;
     private final int NUM_BARS = WIDTH / BAR_WIDTH;
