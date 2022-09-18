@@ -44,7 +44,7 @@ public class Window extends JFrame implements ActionListener {
         shuffleButton.setForeground(Color.WHITE);
         shuffleButton.setBackground(Color.BLACK);
         shuffleButton.setFocusable(false);
-        shuffleButton.addActionListener((e) -> visualizer.generateArr(visualizer.getNumBars()));
+        shuffleButton.addActionListener((e) -> visualizer.generateArr());
 
         // exit button
         exitButton = new JButton();

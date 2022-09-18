@@ -15,7 +15,7 @@ public class Visualizer extends JPanel {
         this.setPreferredSize(new Dimension(WIDTH, HEIGHT));
         this.setBackground(Color.BLACK);
 
-        generateArr(NUM_BARS);
+        generateArr();
     }
 
     public void paintComponent(Graphics g) {
@@ -38,12 +38,12 @@ public class Visualizer extends JPanel {
         return NUM_BARS;
     }
 
-    public void generateArr(int size) {
+    public void generateArr() {
         Random rd = new Random();
 
-        this.arr = new int[size];
+        this.arr = new int[NUM_BARS];
 
-        for (int i = 0; i < size; i++) {
+        for (int i = 0; i < NUM_BARS; i++) {
             this.arr[i] = rd.nextInt(50 - 1) + 1;
         }
 
