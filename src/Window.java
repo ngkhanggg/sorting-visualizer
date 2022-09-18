@@ -3,10 +3,6 @@ import java.awt.event.*;
 import javax.swing.*;
 
 public class Window extends JFrame implements ActionListener {
-    // frame info
-    public static final int WIDTH = 1000;
-    public static final int HEIGHT = 700;
-
     // components
     private JButton shuffleButton, exitButton, sortButton[];
     private JPanel buttonsPanel;
@@ -66,13 +62,13 @@ public class Window extends JFrame implements ActionListener {
         
         // frame
         this.setTitle("Sorting Visualizer");
-        this.setSize(WIDTH, HEIGHT);
         this.setResizable(false);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setLocationRelativeTo(null);
         this.setLayout(new BorderLayout());
         this.add(buttonsPanel, BorderLayout.NORTH);
         this.add(visualizer, BorderLayout.CENTER);
+        this.pack();
+        this.setLocationRelativeTo(null);
         this.setVisible(true);
     }
 
