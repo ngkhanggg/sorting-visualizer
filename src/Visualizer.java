@@ -11,6 +11,7 @@ public class Visualizer extends JPanel {
     private final int BAR_WIDTH = 4;
     private final int NUM_BARS = WIDTH / BAR_WIDTH;
 
+    // constructor
     public Visualizer() {
         this.setPreferredSize(new Dimension(WIDTH, HEIGHT));
         this.setBackground(Color.BLACK);
@@ -18,11 +19,13 @@ public class Visualizer extends JPanel {
         generateArr();
     }
 
+    // paint
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         draw(g);
     }
 
+    // draw
     public void draw(Graphics g) {
         for (int i = 0; i < NUM_BARS; i++) {
             int height = arr[i]*10;
@@ -34,10 +37,12 @@ public class Visualizer extends JPanel {
         }
     }
 
+    // get number of bars
     public int getNumBars() {
         return NUM_BARS;
     }
 
+    // generate a new array
     public void generateArr() {
         Random rd = new Random();
 
