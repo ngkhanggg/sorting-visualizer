@@ -32,8 +32,10 @@ public class Visualizer extends JPanel {
             int x = i + (BAR_WIDTH - 1) * i;
             int y = HEIGHT - height;
 
-            g.setColor(Color.WHITE);
+            g.setColor(Color.GREEN);
             g.fillRect(x, y, BAR_WIDTH, height);
+            g.setColor(Color.WHITE);
+            g.drawRect(x, y, BAR_WIDTH, height);
         }
     }
 
@@ -42,7 +44,7 @@ public class Visualizer extends JPanel {
         return NUM_BARS;
     }
 
-    // generate a new array
+    // generate and draw a new array
     public void generateArr() {
         Random rd = new Random();
 
@@ -50,6 +52,23 @@ public class Visualizer extends JPanel {
 
         for (int i = 0; i < NUM_BARS; i++) {
             this.arr[i] = rd.nextInt(50 - 1) + 1;
+        }
+
+        this.repaint();
+    }
+
+    // sort animation
+    public void sortAnimate(String name) {
+        BubbleSort bubbleSort = new BubbleSort(arr);
+
+        switch(name) {
+            case "Bubble Sort":
+                bubbleSort.sort();
+                System.out.println(bubbleSort.toString());
+                break;
+            default:
+                System.out.println("Hehehe");
+                break;
         }
 
         this.repaint();
