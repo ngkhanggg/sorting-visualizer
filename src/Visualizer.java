@@ -1,14 +1,16 @@
 import java.awt.*;
+import java.awt.event.*;
 import java.util.*;
 import javax.swing.*;
+import javax.swing.Timer;
 
 public class Visualizer extends JPanel {
     private int[] arr;
 
-    private final int WIDTH = 1100;
+    private final int WIDTH = 1000;
     private final int HEIGHT = 600;
 
-    private final int BAR_WIDTH = 4;
+    private final int BAR_WIDTH = 10;
     private final int NUM_BARS = WIDTH / BAR_WIDTH;
 
     // constructor
@@ -22,26 +24,21 @@ public class Visualizer extends JPanel {
     // paint
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
-        draw(g);
+        drawInitialBars(g);
     }
 
     // draw
-    public void draw(Graphics g) {
+    public void drawInitialBars(Graphics g) {
         for (int i = 0; i < NUM_BARS; i++) {
             int height = arr[i]*10;
             int x = i + (BAR_WIDTH - 1) * i;
             int y = HEIGHT - height;
 
-            g.setColor(Color.GREEN);
+            g.setColor(Color.RED);
             g.fillRect(x, y, BAR_WIDTH, height);
             g.setColor(Color.WHITE);
             g.drawRect(x, y, BAR_WIDTH, height);
         }
-    }
-
-    // get number of bars
-    public int getNumBars() {
-        return NUM_BARS;
     }
 
     // generate and draw a new array
@@ -61,16 +58,19 @@ public class Visualizer extends JPanel {
     public void sortAnimate(String name) {
         BubbleSort bubbleSort = new BubbleSort(arr);
 
-        switch(name) {
-            case "Bubble Sort":
-                bubbleSort.sort();
-                System.out.println(bubbleSort.toString());
-                break;
-            default:
-                System.out.println("Hehehe");
-                break;
-        }
-
-        this.repaint();
+        Timer timer = new Timer(0, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (bubbleSort.isSorted()) {
+                    ((Timer) e.getSource()).stop();
+                    System.out.println(bubbleSort);
+                }
+                else {
+                    bubbleSort.sort();
+                }
+                repaint();
+            }
+        });
+        timer.start();
     }
 }
