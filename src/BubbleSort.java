@@ -1,5 +1,5 @@
 public class BubbleSort extends Sorter {
-    int arrayIndex = 0, compareIndex;
+    private int arrayIndex = 0, compareIndex;
 
     public BubbleSort(int[] arr) {
         super(arr);
@@ -11,7 +11,7 @@ public class BubbleSort extends Sorter {
 
     public void sort() {
         if (arr[compareIndex + 1] < arr[compareIndex]) {
-            swap(compareIndex);
+            swap(compareIndex + 1, compareIndex);
         }
 
         if (compareIndex+1 >= arr.length-arrayIndex-1) {
