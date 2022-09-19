@@ -77,7 +77,8 @@ public class Window extends JFrame implements ActionListener {
 
         for (int i = 0; i < sortButtons.length; i++) {
             if (a == sortButtons[i]) {
-                System.out.println(sortButtons[i].getText());
+                String algorithm = sortButtons[i].getText();
+                visualizer.sortAnimate(algorithm);
             }
         }
     }
