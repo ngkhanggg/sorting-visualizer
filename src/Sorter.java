@@ -27,10 +27,10 @@ public abstract class Sorter {
 
     public abstract void sort();
 
-    public void swap(int index) {
-        int temp = arr[index];
-        arr[index] = arr[index+1];
-        arr[index+1] = temp;
+    public void swap(int index1, int index2) {
+        int temp = arr[index1];
+        arr[index1] = arr[index2];
+        arr[index2] = temp;
     }
 
     public String toString() {
