@@ -1,4 +1,6 @@
 public class BubbleSort extends Sorter {
+    int arrayIndex = 0, compareIndex;
+
     public BubbleSort(int[] arr) {
         super(arr);
     }
@@ -8,20 +10,17 @@ public class BubbleSort extends Sorter {
     }
 
     public void sort() {
-        if (!isSorted()) {
-            start = System.nanoTime();
-            for (int i = 0; i < arr.length-1; i++) {
-                for (int j = 0; j < arr.length-i-1; j++) {
-                    if (arr[j] > arr[j+1]) {
-                        swap(j);
-                    }
-                    comparisons++;
-                }
-            }
-            end = System.nanoTime();
+        if (arr[compareIndex + 1] < arr[compareIndex]) {
+            swap(compareIndex);
         }
+
+        if (compareIndex+1 >= arr.length-arrayIndex-1) {
+            arrayIndex++;
+            compareIndex = 0;
+        }
+
         else {
-            System.out.println("Array is already sorted");
+            compareIndex++;
         }
     }
 }
