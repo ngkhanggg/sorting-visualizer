@@ -1,8 +1,8 @@
 public class BubbleSort extends Sorter {
     private int arrayIndex = 0, compareIndex;
 
-    public BubbleSort(int[] arr) {
-        super(arr);
+    public BubbleSort(Visualizer array) {
+        super(array);
     }
 
     public String getName() {
@@ -10,12 +10,12 @@ public class BubbleSort extends Sorter {
     }
 
     public void sort() {
-        if (arr[compareIndex + 1] < arr[compareIndex]) {
-            swap(compareIndex + 1, compareIndex);
+        if (array.getValue(compareIndex + 1) < array.getValue(compareIndex)) {
+            array.swap(compareIndex + 1, compareIndex);
             comparisons++;
         }
 
-        if (compareIndex+1 >= arr.length-arrayIndex-1) {
+        if (compareIndex+1 >= array.getArraySize()-arrayIndex-1) {
             arrayIndex++;
             compareIndex = 0;
         }

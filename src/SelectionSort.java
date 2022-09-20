@@ -1,8 +1,8 @@
 public class SelectionSort extends Sorter {
     private int arrayIndex = 0, compareIndex = arrayIndex + 1;
 
-    public SelectionSort(int[] arr) {
-        super(arr);
+    public SelectionSort(Visualizer array) {
+        super(array);
     }
 
     @Override
@@ -11,15 +11,16 @@ public class SelectionSort extends Sorter {
     }
 
     public void sort() {
-        if (arr[compareIndex] < arr[arrayIndex]) {
-            swap(arrayIndex, compareIndex);
+        if (array.getValue(compareIndex) < array.getValue(arrayIndex)) {
+            array.swap(arrayIndex, compareIndex);
             comparisons++;
         }
 
-        if (compareIndex+1 >= arr.length) {
+        if (compareIndex+1 >= array.getArraySize()) {
             arrayIndex++;
             compareIndex = arrayIndex + 1;
         }
+        
         else {
             compareIndex++;
         }
