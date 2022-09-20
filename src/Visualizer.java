@@ -6,6 +6,8 @@ import javax.swing.Timer;
 
 public class Visualizer extends JPanel {
     private int[] arr;
+    
+    public static int[] barColours;
 
     private final int WIDTH = 1000;
     private final int HEIGHT = 600;
@@ -17,6 +19,8 @@ public class Visualizer extends JPanel {
     public Visualizer() {
         this.setPreferredSize(new Dimension(WIDTH, HEIGHT));
         this.setBackground(Color.BLACK);
+        
+        barColours = new int[NUM_BARS];
 
         generateArr();
     }
@@ -29,15 +33,21 @@ public class Visualizer extends JPanel {
 
     // draw
     public void draw(Graphics g) {
+        g.setColor(Color.WHITE);
         for (int i = 0; i < NUM_BARS; i++) {
             int height = arr[i]*10;
             int x = i + (BAR_WIDTH - 1) * i;
             int y = HEIGHT - height;
 
-            g.setColor(Color.RED);
+            int val = barColours[i]*2;
+            g.setColor(new Color(255, 255 - val, 255 - val));
             g.fillRect(x, y, BAR_WIDTH, height);
             g.setColor(Color.WHITE);
             g.drawRect(x, y, BAR_WIDTH, height);
+
+            if (barColours[i] > 0) {
+                barColours[i] -= 10;
+            }
         }
     }
 
@@ -55,7 +65,16 @@ public class Visualizer extends JPanel {
             this.arr[i] = rd.nextInt(50 - 1) + 1;
         }
 
+        resetColours();
+
         this.repaint();
+    }
+
+    // reset colours
+    public void resetColours() {
+        for (int i = 0; i < NUM_BARS; i++) {
+            barColours[i] = 0;
+        }
     }
 
     // sort animation

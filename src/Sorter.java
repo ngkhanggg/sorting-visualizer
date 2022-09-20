@@ -26,6 +26,9 @@ public abstract class Sorter {
         int temp = arr[index1];
         arr[index1] = arr[index2];
         arr[index2] = temp;
+
+        Visualizer.barColours[index1] = 100;
+        Visualizer.barColours[index2] = 100;
     }
 
     public String toString() {
