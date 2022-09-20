@@ -4,7 +4,7 @@ import javax.swing.*;
 
 public class Window extends JFrame implements ActionListener {
     // components
-    private JButton shuffle, exit, sortButtons[];
+    private JButton reset, exit, sortButtons[];
     private JPanel buttonsPanel;
 
     // visualizer panel
@@ -36,14 +36,14 @@ public class Window extends JFrame implements ActionListener {
             buttonsPanel.add(Box.createHorizontalStrut(3));
         }
 
-        // shuffle button
-        shuffle = new JButton();
-        shuffle.setFont(new Font("Cambria", Font.PLAIN, 20));
-        shuffle.setText("Shuffle");
-        shuffle.setForeground(Color.WHITE);
-        shuffle.setBackground(Color.BLACK);
-        shuffle.setFocusable(false);
-        shuffle.addActionListener((e) -> visualizer.generateArr());
+        // reset button
+        reset = new JButton();
+        reset.setFont(new Font("Cambria", Font.PLAIN, 20));
+        reset.setText("Reset");
+        reset.setForeground(Color.WHITE);
+        reset.setBackground(Color.BLACK);
+        reset.setFocusable(false);
+        reset.addActionListener((e) -> visualizer.generateArr());
 
         // exit button
         exit = new JButton();
@@ -54,8 +54,8 @@ public class Window extends JFrame implements ActionListener {
         exit.setFocusable(false);
         exit.addActionListener((e) -> System.exit(0));
 
-        // add exit button and shuffle button to button panel
-        buttonsPanel.add(shuffle);
+        // add exit button and reset button to button panel
+        buttonsPanel.add(reset);
         buttonsPanel.add(Box.createHorizontalStrut(3));
         buttonsPanel.add(exit);
         
