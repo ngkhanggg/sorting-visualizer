@@ -1,5 +1,4 @@
 public abstract class Sorter {
-    protected long start, end;
     protected int comparisons;
     protected int[] arr;
 
@@ -9,10 +8,6 @@ public abstract class Sorter {
     }
 
     public abstract String getName();
-
-    public long getExecutionTime() {
-        return end-start;
-    }
 
     public int getComparisons() {
         return comparisons;
@@ -34,6 +29,6 @@ public abstract class Sorter {
     }
 
     public String toString() {
-        return String.format("Sorting Algorithm: %s\nExecution Time: %s nanoseconds\nComparisons: %s times", getName(), getExecutionTime(), getComparisons());
+        return String.format("Sorting Algorithm: %s\nComparisons: %s times", getName(), getComparisons());
     }
 }
