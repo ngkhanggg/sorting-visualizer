@@ -41,7 +41,7 @@ public class Visualizer extends JPanel {
         }
     }
 
-    public int getNUM_BARS() {
+    public int getNumBars() {
         return NUM_BARS;
     }
 
