@@ -6,6 +6,6 @@ A program that visualizes sorting algorithms, written in Java. This program allo
 - <u>`Merge Sort:`</u> the array is initially divided into two equal halves and then they are combined in a sorted manner.
 - <u>`Quick Sort:`</u> picks an element as a pivot and partitions the given array around the picked pivot.
 - <u>`Selection Sort:`</u> sorts an array by repeatedly finding the minimum element (considering ascending order) from the unsorted part and putting it at the beginning.
-## References
+## Resources
 - [Java's GUI Tutorial](https://www.youtube.com/watch?v=bI6e6qjJ8JQ)
 - [Sorting Algorithms](https://www.geeksforgeeks.org/sorting-algorithms/?ref=lbp)
