@@ -41,6 +41,10 @@ public class Visualizer extends JPanel {
         }
     }
 
+    public int getNUM_BARS() {
+        return NUM_BARS;
+    }
+
     // generate and draw a new array
     public void generateArr() {
         Random rd = new Random();
@@ -58,6 +62,7 @@ public class Visualizer extends JPanel {
     public void sortAnimate(String name) {
         BubbleSort bubbleSort = new BubbleSort(arr);
         SelectionSort selectionSort = new SelectionSort(arr);
+
         Timer timer = new Timer(0, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -65,6 +70,7 @@ public class Visualizer extends JPanel {
                     case "Bubble Sort":
                         if (bubbleSort.isSorted()) {
                             ((Timer)e.getSource()).stop();
+                            System.out.println(bubbleSort);
                         }
                         else {
                             bubbleSort.sort();
@@ -74,6 +80,7 @@ public class Visualizer extends JPanel {
                     case "Selection Sort":
                         if (selectionSort.isSorted()) {
                             ((Timer)e.getSource()).stop();
+                            System.out.println(selectionSort);
                         }
                         else {
                             selectionSort.sort();
