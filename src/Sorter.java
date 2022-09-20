@@ -1,9 +1,9 @@
 public abstract class Sorter {
+    protected Visualizer array;
     protected int comparisons;
-    protected int[] arr;
 
-    public Sorter(int[] arr) {
-        this.arr = arr;
+    public Sorter(Visualizer array) {
+        this.array = array;
         this.comparisons = 0;
     }
 
@@ -14,24 +14,18 @@ public abstract class Sorter {
     }
 
     public boolean isSorted() {
-        for (int i = 0; i < arr.length-1; i++) {
-            if (arr[i+1] < arr[i]) return false;
+        for (int i = 0; i < array.getArraySize()-1; i++) {
+            if (array.getValue(i+1) < array.getValue(i)) return false;
         }
         return true;
     }
 
     public abstract void sort();
 
-    public void swap(int index1, int index2) {
-        int temp = arr[index1];
-        arr[index1] = arr[index2];
-        arr[index2] = temp;
-
-        Visualizer.barColours[index1] = 100;
-        Visualizer.barColours[index2] = 100;
-    }
-
     public String toString() {
-        return String.format("Sorting Algorithm: %s\nComparisons: %s times", getName(), getComparisons());
+        String s1, s2;
+        s1 = String.format("Sorting Algorithm: %s\n", getName());
+        s2 = String.format("Comparisons: %s times\n", getComparisons());
+        return s1+s2;
     }
 }
