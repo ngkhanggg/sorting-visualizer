@@ -43,7 +43,7 @@ public class Window extends JFrame implements ActionListener {
         reset.setForeground(Color.WHITE);
         reset.setBackground(Color.BLACK);
         reset.setFocusable(false);
-        reset.addActionListener((e) -> visualizer.generateArr());
+        reset.addActionListener((e) -> visualizer.generateArray());
 
         // exit button
         exit = new JButton();
@@ -73,13 +73,12 @@ public class Window extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        Object a = e.getSource();
+        Object action = e.getSource();
 
         for (int i = 0; i < sortButtons.length; i++) {
-            if (a == sortButtons[i]) {
+            if (action == sortButtons[i]) {
                 String algorithm = sortButtons[i].getText();
-                System.out.println("Number of bars: " + visualizer.getNumBars());
-                visualizer.sortAnimate(algorithm);
+                visualizer.sortAnimate(algorithm, visualizer);
             }
         }
     }
