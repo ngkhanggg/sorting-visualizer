@@ -13,6 +13,7 @@ public class SelectionSort extends Sorter {
     public void sort() {
         if (arr[compareIndex] < arr[arrayIndex]) {
             swap(arrayIndex, compareIndex);
+            comparisons++;
         }
 
         if (compareIndex+1 >= arr.length) {

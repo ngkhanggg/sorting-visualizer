@@ -12,6 +12,7 @@ public class BubbleSort extends Sorter {
     public void sort() {
         if (arr[compareIndex + 1] < arr[compareIndex]) {
             swap(compareIndex + 1, compareIndex);
+            comparisons++;
         }
 
         if (compareIndex+1 >= arr.length-arrayIndex-1) {
