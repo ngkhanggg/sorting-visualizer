@@ -67,6 +67,20 @@ public class Visualizer extends JPanel {
         barColours[index2] = 100;
     }
 
+    // set colour for bars
+    public void updateSingle(int index, int value) {
+        array[index] = value;
+        barColours[index] = 100;
+        repaint();
+    }
+
+    // highlight bars
+    public void highlightArray() {
+        for (int i = 0; i < getArraySize(); i++) {
+            updateSingle(i, getValue(i));
+        }
+    }
+
     // sort animation
     public void sortAnimate(String name, Visualizer visualizer) {
         BubbleSort bubbleSort = new BubbleSort(visualizer);
@@ -80,7 +94,7 @@ public class Visualizer extends JPanel {
                         if (bubbleSort.isSorted()) {
                             ((Timer)e.getSource()).stop();
                             System.out.println(bubbleSort);
-                            resetColours();
+                            highlightArray();
                         }
                         else {
                             bubbleSort.sort();
@@ -91,7 +105,7 @@ public class Visualizer extends JPanel {
                         if (selectionSort.isSorted()) {
                             ((Timer)e.getSource()).stop();
                             System.out.println(selectionSort);
-                            resetColours();
+                            highlightArray();
                         }
                         else {
                             selectionSort.sort();
